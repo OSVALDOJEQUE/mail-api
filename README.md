@@ -1,0 +1,8 @@
+# .env
+
+MAIL_USER=ecosismz@gmail.com
+MAIL_PASSWORD=at2020*.
+MAIL_PORT=587
+
+REDIS_HOST=127.0.0.1
+REDIS_PORT=6379
