@@ -14,7 +14,7 @@ const MailController = require("./app/Controllers/MailController");
 
 // Hello World
 app.get("/", (req, res) => {
-    res.send("Hello World!");
+    res.send("Email Service");
 });
 app.post('/mail', MailController.sendMail);
 
