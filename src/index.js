@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 // create application/x-www-form-urlencoded parser
 app.use(bodyParser.urlencoded({ extended: false }));
 
-const MailController =require("../src/app/MailController");
+const MailController =require("./app/Controllers/MailController");
 
 
 app.post('/mail',MailController.sendMail);
