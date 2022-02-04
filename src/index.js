@@ -12,9 +12,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 const MailController = require("./app/Controllers/MailController");
 
-
+// Hello World
+app.get("/", (req, res) => {
+    res.send("Hello World!");
+});
 app.post('/mail', MailController.sendMail);
 
 const PORT = process.env.PORT || 3008;
 app.listen(PORT, () => console.log("Servidor esta rodando na porta:" + PORT));
-
