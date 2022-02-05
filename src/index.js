@@ -19,4 +19,4 @@ app.get("/", (req, res) => {
 app.post('/mail', MailController.sendMail);
 
 const PORT = process.env.PORT || 3008;
-app.listen(PORT, () => console.log("Servidor esta rodando na porta:" + PORT));
+app.listen(PORT, "localhost", () => console.log("Servidor esta rodando na porta:" + PORT));
