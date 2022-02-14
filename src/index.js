@@ -10,13 +10,17 @@ app.use(bodyParser.json());
 // create application/x-www-form-urlencoded parser
 app.use(bodyParser.urlencoded({ extended: false }));
 
+
 const MailController = require("./app/Controllers/MailController");
 
-// Hello World
-app.get("/", (req, res) => {
-    res.send("Email Service");
-});
+
 app.post('/mail', MailController.sendMail);
 
 const PORT = process.env.PORT || 3008;
 app.listen(PORT, () => console.log("Servidor esta rodando na porta:" + PORT));
+
+
+
+  
+
+  

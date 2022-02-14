@@ -1,7 +1,7 @@
 const Mail= require("../lib/Mail"); 
 
 module.exports = {
-    key:"RegistationMail",
+    key:"RegistrationMail",
     async handle({data}){
         const {message} = data;
             await Mail.sendMail({

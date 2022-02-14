@@ -1,12 +1,12 @@
+
 module.exports = {
-    service: "gmail",
-    port: process.env.MAIL_PORT, 
-    secure: false,
-    auth: {
-      user: process.env.MAIL_USER,
-      pass: process.env.MAIL_PASSWORD,
-    },
-    tls: {
-      rejectUnauthorized: false,
-    },
+  service: 'gmail',
+  auth: {
+    type: 'OAuth2',
+    user: 'osvaldojeque@gmail.com',
+    clientId: CLIENT_ID,
+    clientSecret: CLEINT_SECRET,
+    refreshToken: REFRESH_TOKEN,
+    accessToken: accessToken,
+  },
 };

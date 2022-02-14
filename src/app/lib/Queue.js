@@ -12,7 +12,7 @@ const queues = Object.values(jobs).map(job =>({
 module.exports = {
     queues,
     add(name, data){
-        const queue = queues.find(name => name ===name);
+        const queue = queues.find(queue => queue.name ===name);
         return queue.bull.add(data);
     },
     process(){

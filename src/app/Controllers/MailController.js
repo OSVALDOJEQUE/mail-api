@@ -9,10 +9,10 @@ exports.sendMail =  async (req,res)=>{
     text,
   };
 
-  //Adicionar job Registation Mail na Fila
+  // //Adicionar job Registation Mail na Fila
   await Queue.add("RegistrationMail",{ message});
 
-  await Queue.add("ConfirmationMail",{ message}); 
+  // await Queue.add("ConfirmationMail",{ message}); 
 
   return res.json(message);   
   };  
