@@ -23,7 +23,7 @@ const sendMail = nodemailer.createTransport({
     service: 'gmail',
     auth: {
       type: 'OAuth2',
-      user: 'osvaldojeque@gmail.com',
+      user: process.env.MAIL_USER,
       clientId: CLIENT_ID,
       clientSecret: CLEINT_SECRET,
       refreshToken: REFRESH_TOKEN,
