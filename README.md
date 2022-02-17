@@ -1,8 +1,18 @@
-# .env
+# MAIL- API
 
-MAIL_USER=ecosismz@gmail.com
-MAIL_PASSWORD=at2020*.
-MAIL_PORT=587
 
-REDIS_HOST=127.0.0.1
-REDIS_PORT=6379
+## Install dev dependencies
+```bash
+yarn install
+```
+
+## Environment variables
+```bash
+MAIL_USER
+REDIS_HOST
+REDIS_PORT
+CLIENT_ID
+CLEINT_SECRET
+REDIRECT_URI
+REFRESH_TOKEN
+```
