@@ -1,6 +1,6 @@
 const Queue = require("../lib/Queue");
 
-exports.sendMail =  async (req,res)=>{
+const sendMail =  async (req,res)=>{
   const {username,email,subject,text} = req.body;
 
   const message = {
@@ -10,10 +10,27 @@ exports.sendMail =  async (req,res)=>{
     text,
   };
 
-  // //Adicionar job Registation Mail na Fila
   await Queue.add("RegistrationMail",{ message});
 
-  // await Queue.add("ConfirmationMail",{ message}); 
-
   return res.json(message);   
-  };  
+  };
+
+  const resetPassword =  async (req,res)=>{
+    const {email,text} = req.body;
+    const subject = "SIGA - Recuperação da senha de utilizador"
+  
+    const message = {
+      email,
+      subject,
+      text,
+    };
+
+    await Queue.add("ResetPassword",{ message});
+  
+    return res.json(message);   
+    };
+
+    module.exports ={
+      sendMail,
+      resetPassword
+    }

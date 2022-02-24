@@ -41,8 +41,38 @@
                     }
                 }
             }
+        },
+        "/reset-password":{
+            "post":{
+                "summary":"Reset Password",
+                "tags":["ResetPassword"],
+                "requestBody":{
+                    "content":{
+                        "aplication/json":{
+                            "schema":{
+                                "$ref":"#/components/schemas/ResetPassword"
+                            }
+                        }
+                    }
+                },
+                "responses":{
+                    "401":{
+                        "description":"Unthorized"
+                    },
+                    "200":{
+                        "description": "OK",
+                        "content":{
+                            "aplication/json":{
+                                "schema":{
+                                    "$ref":"#/components/schemas/ResetPassword"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
-    },
+},
     "components":{
         "schemas":{
             "Mail":{
@@ -62,6 +92,18 @@
                     }
 
                 }
+            },
+            "ResetPassword":{
+                "type":"object",
+                "properties":{
+                    "email":{
+                        "type":"string"
+                    },
+                    "text":{
+                        "type":"string"
+                    }
+                }
+
             }
         }
 
