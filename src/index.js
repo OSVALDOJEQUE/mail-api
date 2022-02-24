@@ -1,5 +1,10 @@
 require("dotenv").config();
 const express = require("express")
+
+const swagger = require("swagger-ui-express");
+
+const swaggerDocs = require("./swagger.json");
+
 const bodyParser = require("body-parser")
 const app = express();
 app.use(require("cors")());
@@ -13,6 +18,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 const MailController = require("./app/Controllers/MailController");
 
+
+app.use("/documentation", swagger.serve,swagger.setup(swaggerDocs))
 
 app.post('/mail', MailController.sendMail);
 

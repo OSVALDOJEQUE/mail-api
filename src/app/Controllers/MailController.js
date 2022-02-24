@@ -1,9 +1,10 @@
 const Queue = require("../lib/Queue");
 
 exports.sendMail =  async (req,res)=>{
-  const {email,subject,text} = req.body;
+  const {username,email,subject,text} = req.body;
 
   const message = {
+    username,
     email,
     subject,
     text,

@@ -1,0 +1,69 @@
+{
+    "openapi":"3.0.0",
+    "info":{
+    "title":"API de envio de e-mails",
+    "description":"Envio de email"
+    },
+    "version": "1.0.0",
+    "servers":[
+        {
+            
+        "url":"https://api.siga.uem.mz/mail/mail"
+        }
+    ],
+    "paths":{
+        "/mail":{
+            "post":{
+                "summary":"Envio de e-mails",
+                "tags":["Mail"],
+                "requestBody":{
+                    "content":{
+                        "aplication/json":{
+                            "schema":{
+                                "$ref":"#/components/schemas/Mail"
+                            }
+                        }
+                    }
+                },
+                "responses":{
+                    "401":{
+                        "description":"Unthorized"
+                    },
+                    "200":{
+                        "description": "OK",
+                        "content":{
+                            "aplication/json":{
+                                "schema":{
+                                    "$ref":"#/components/schemas/Mail"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components":{
+        "schemas":{
+            "Mail":{
+                "type":"object",
+                "properties":{
+                    "username":{
+                        "type":"string"
+                    },
+                    "email":{
+                        "type":"string"
+                    },
+                    "subject":{
+                        "type":"string"
+                    },
+                    "text":{
+                        "type":"string"
+                    }
+
+                }
+            }
+        }
+
+    }
+} 

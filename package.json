@@ -10,8 +10,10 @@
     "dotenv": "^14.3.2",
     "express": "^4.17.2",
     "googleapis": "^95.0.0",
+    "handlebars": "^4.7.7",
     "nodemailer": "^6.7.2",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "swagger-ui-express": "^4.3.0"
   },
   "scripts": {
     "dev": "npm-run-all -p dev:*",
