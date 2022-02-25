@@ -17,7 +17,7 @@ const sendMail =  async (req,res)=>{
 
   const resetPassword =  async (req,res)=>{
     const {email,text} = req.body;
-    const subject = "SIGA - Recuperação da senha de utilizador"
+    const subject = "Recuperação da senha de utilizador"
   
     const message = {
       email,

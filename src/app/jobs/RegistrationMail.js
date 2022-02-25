@@ -21,7 +21,7 @@ module.exports = {
         const html = template(replacements)
         
             await Mail.sendMail({
-                from: process.env.MAIL_USER,
+                from: 'SIGA UEM <no-reply@uem.ac.mz>',
                 to: message.email,
                 subject: message.subject,
                 html: html
