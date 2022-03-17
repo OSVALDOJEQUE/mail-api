@@ -27,9 +27,3 @@ app.post('/reset-password', MailController.resetPassword);
 
 const PORT = process.env.PORT || 3008;
 app.listen(PORT, () => console.log("Servidor esta rodando na porta:" + PORT));
-
-
-
-  
-
-  
