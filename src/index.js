@@ -22,6 +22,7 @@ const MailController = require("./app/Controllers/MailController");
 app.use("/documentation", swagger.serve,swagger.setup(swaggerDocs))
 
 app.post('/mail', MailController.sendMail);
+app.post('/form', MailController.form);
 
 app.post('/reset-password', MailController.resetPassword);
 

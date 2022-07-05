@@ -28,9 +28,26 @@ const sendMail =  async (req,res)=>{
     await Queue.add("ResetPassword",{ message});
   
     return res.json(message);   
+  };
+
+  const form =  async (req,res)=>{
+    const {username,email,subject,text} = req.body;
+
+    const message = {
+      username,
+      email,
+      subject,
+      text,
     };
+    
+    await Queue.add("Form",{ message});
+    
+    return res.json(message);   
+ };
+  
 
     module.exports ={
       sendMail,
-      resetPassword
+      resetPassword,
+      form
     }

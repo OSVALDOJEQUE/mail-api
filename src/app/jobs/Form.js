@@ -5,9 +5,9 @@ const handlebars = require("handlebars");
 const path = require("path");
 
 module.exports = {
-    key:"RegistrationMail",
+    key:"Form",
     async handle({data}){
-        const filePath = path.join(__dirname,'../../mail/mail.html');
+        const filePath = path.join(__dirname,'../../mail/form.html');m
         const source = fs.readFileSync(filePath, 'utf-8').toString();
         const template = handlebars.compile(source);
         const {message} = data;
