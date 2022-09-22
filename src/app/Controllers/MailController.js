@@ -44,10 +44,27 @@ const sendMail =  async (req,res)=>{
     
     return res.json(message);   
  };
+
+ const teacherMail =  async (req,res)=>{
+  const {username,email,subject, user, password} = req.body;
+
+  const message = {
+    username,
+    email,
+    subject,
+    user,
+    password
+  };
+  
+  await Queue.add("TeacherMail",{ message});
+  
+  return res.json(message);   
+};
   
 
     module.exports ={
       sendMail,
       resetPassword,
-      form
+      form,
+      teacherMail
     }

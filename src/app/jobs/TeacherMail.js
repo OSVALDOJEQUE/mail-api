@@ -5,9 +5,9 @@ const handlebars = require("handlebars");
 const path = require("path");
 
 module.exports = {
-    key:"Form",
+    key:"TeacherMail",
     async handle({data}){
-        const filePath = path.join(__dirname,'../../mail/form.html');
+        const filePath = path.join(__dirname,'../../mail/teacherMail.html');
         const source = fs.readFileSync(filePath, 'utf-8').toString();
         const template = handlebars.compile(source);
         const {message} = data;
@@ -15,7 +15,8 @@ module.exports = {
 
         const replacements = {
             username:message.username ?? 'Utilizador',
-            text:message.text,
+            password:message.password,
+            email:message.user,
             year
         };
         
@@ -27,8 +28,17 @@ module.exports = {
                 subject: message.subject,
                 html: html
             });
+            console.log(data);
 
     },
 }
+
+// module.exports = { 
+//     key:"TeacherMail",
+//     async handle({data}){
+//         const {message} = data;
+//         console.log(message);
+//     },
+// }
 
 

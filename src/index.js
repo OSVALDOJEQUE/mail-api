@@ -23,6 +23,7 @@ app.use("/documentation", swagger.serve,swagger.setup(swaggerDocs))
 
 app.post('/mail', MailController.sendMail);
 app.post('/form', MailController.form);
+app.post('/teacher-mail', MailController.teacherMail)
 
 app.post('/reset-password', MailController.resetPassword);
 
