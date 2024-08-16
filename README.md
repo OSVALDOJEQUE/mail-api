@@ -19,14 +19,7 @@ O objetivo principal desta API é gerenciar o envio de emails através de filas,
 3.**Suba os containers Docker:**
   ```
    docker-compose up -d
-
-
-## Install dev dependencies
-```bash
-yarn install
-```
-
-## Environment variables
+4.Configure o ficheiro .env:**
 ```bash
 MAIL_USER
 REDIS_HOST
@@ -36,3 +29,5 @@ CLEINT_SECRET
 REDIRECT_URI
 REFRESH_TOKEN
 ```
+
+
