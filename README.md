@@ -13,21 +13,23 @@ O objetivo principal desta API é gerenciar o envio de emails através de filas,
 
 ### Passos de Instalação
 1. **Clone o repositório:**
-2. **Construa a imagem Docker:**
+2. **Configure o ficheiro .env:**
+   ```bash
+   MAIL_USER
+   REDIS_HOST
+   REDIS_PORT
+   CLIENT_ID
+   CLEINT_SECRET
+   REDIRECT_URI
+   REFRESH_TOKEN
+   
+3. **Construa a imagem Docker:**
    ```bash
    docker build -t email-api .
-3.**Suba os containers Docker:**
-  ```
-   docker-compose up -d
-4.Configure o ficheiro .env:**
-```bash
-MAIL_USER
-REDIS_HOST
-REDIS_PORT
-CLIENT_ID
-CLEINT_SECRET
-REDIRECT_URI
-REFRESH_TOKEN
-```
+3.**Suba o container Docker  e Inicie a API**
+A API estará acessível em http://localhost:3008.
+
+
+
 
 
